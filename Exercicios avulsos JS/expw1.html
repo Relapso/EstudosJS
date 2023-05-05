@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>1- Crie uma página com 3 botões com os valores “Amarelo”, “Verde” e “Vermelho”. Quando o
+    usuário clicar em um desses botões, deve aparecer um alerta com o texto “Você clicou no botão com
+    valor XXX”, onde XXX é a cor referente ao botão clicado.</p>
+
+    <button id="amarelo" padding-left:10px; onclick="exibirAlerta('Amarelo')">Amarelo</button>
+	<button id="verde" onclick="exibirAlerta('Verde')">Verde</button>
+	<button id="vermelho" onclick="exibirAlerta('Vermelho')">Vermelho</button>
+    <br>
+    <script>
+        function exibirAlerta(cor){
+            alert('vc clicou no botão ' + cor); 
+        }
+    </script>
+    <p>2 – Crie uma página com 1 botão com o valor “Iniciar”. Quando o usuário clicar nesse botão, deve
+    aparecer uma caixa para o usuário responder as seguintes perguntas:</p>
+
+    <button id="iniciar" onclick="Pergunta()">Iniciar</button>
+    <br>
+    <script>
+        function Pergunta(){
+            var nome = prompt("Qual seu nome?");
+            var idade = prompt("Qual sua idade?");
+            var curso = prompt("Qual seu curso?");
+            alert(`Seu nome é ${nome}, sua idade é ${idade} anos e você está cursando ${curso}`);
+        }
+    </script>
+
+    <p>3 – Crie uma página com 1 botão com o valor “Calcular Troco”. Quando o usuário clicar nesse
+        botão, deve aparecer uma caixa para o usuário responder as seguintes perguntas:
+        a) Qual o nome do produto?
+        b) Qual o valor do produto?
+        c) Qual o valor dado para pagar o produto?
+        Ao final, exiba um alerta com as informações e com o valor do troco pela compra desse produto.</p>
+    <button id="calculaTroco" onclick="calculaTroco()">Calcular troco</button>
+    <br>
+
+    <p>4 – Crie uma página com 4 botões com os valores “Círculo”, “Quadrado”, “Triângulo” e
+        “Trapézio”. Quando o usuário clicar em um desses botões, deve aparecer uma caixa para o usuário
+        informar as medidas necessárias para calcular a área da figura correspondente. Ao final, deve
+        aparecer um alerta com as informações e o valor da área da figura.</p>
+    <script>
+        function calculaTroco(){
+            var produto = prompt("Nome do produto?");
+            var valorProduto = prompt("Digite o valor do produto");
+            var valorPagamento = prompt("Quanto vc pagou?");
+            var troco = valorPagamento - valorProduto;
+                if(valorPagamento < valorProduto){
+                    alert(`vc roubou isso ai, vc deve: R$${valorProduto - valorPagamento}`);
+                }
+                    else{
+                        alert(`O produto é ${produto},o valor é R$:${valorProduto} \nvalor pagou R$:${valorPagamento} troco: R$:${troco}`)
+                    }
+        }
+    </script>
+
+    <button id="Circulo" onclick="calculaFigura('circulo')">Circulo</button>
+    <button id="Quadrado" onclick="calculaFigura('quadrado')">Quadrado</button>
+    <button id="Triangulo" onclick="calculaFigura('triangulo')">Triangulo</button>
+    <button id="Trapezio" onclick="calculaFigura('trapezio')">Trapezio</button>
+
+    <script>
+        function calculaFigura(figura){
+            if(figura === "circulo"){
+                var raio = prompt("Digite o raio do circulo");
+                var areaCirculo = 3.14 * (raio **2);
+                alert(`a area do circulo é ${areaCirculo}`);
+            }
+            else if(figura === "quadrado"){
+                var ladoQuadrado = prompt("Digite o lado do quadrado");
+                var areaQuadrado = (ladoQuadrado**2);
+                alert(`a area do Quadrado é ${areaQuadrado}`);
+            }
+            else if(figura === "triangulo"){
+                var baseTriangulo = prompt("Digite a base do triangulo");
+                var alturaTriangulo = prompt("Digite a altura do triangulo");
+                var areaTriangulo = (baseTriangulo * alturaTriangulo)/2;
+                alert(`a area do Triangulo é ${areaTriangulo}`);
+        } 
+            else if(figura === "trapezio"){
+                var baseMaior = prompt("digite a base maior");
+                var baseMenor = prompt("digite a base menor");
+                var alturaTrapezio = prompt("digite a altura do trapezio");
+                var areaTrapezio = ((baseMaior + baseMenor)*alturaTrapezio)/2;
+                alert(`a area do Trapezio é ${areaTrapezio}`);
+                
+            }
+    }
+        
+    </script>
+
+
+
+</body>
+</html>
